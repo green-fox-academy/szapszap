@@ -73,5 +73,4 @@ let k: string = 'Apple';
 for (let p: number = 0; p < 3; p++) {
      k = k + 'Apple';
 }
-
 console.log(k);
