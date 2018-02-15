@@ -10,7 +10,7 @@ if ((a % 2) === 0) {
 }
 
 
-let b: number = 13;
+let b: number = 22;
 let out2: string = '';
 // if b is between 10 and 20 set out2 to "Sweet!"
 // if less than 10 set out2 to "Less!",
@@ -26,3 +26,20 @@ if (10 < b && b > 20) {
     console.log(out2);
 } 
 
+let c: number = 123;
+let credits: number = 100;
+let isBonus: boolean = false;
+// if credits are at least 50,
+// and is_bonus is false decrement c by 2
+// if credits are smaller than 50,
+// and is_bonus is false decrement c by 1
+// if is_bonus is true c should remain the same
+if (credits >= 50 && !isBonus) {
+    c = c - 2
+    console.log(c);
+} else if (credits < 50 && !isBonus) {
+    c = c - 1;
+    console.log(c);
+} else {
+    console.log(c);
+}
