@@ -70,7 +70,7 @@ if (j % 3 === 0 || j % 5 === 0) {
 
 let k: string = 'Apple';
 // fill the k variable with its content 4 times
-for (let p: number = 0; p < 3; p++) {
-     k = k + 'Apple';
+for (let p: number = 0; p < 2; p++) {
+     k += k;
 }
 console.log(k);
