@@ -1,7 +1,9 @@
+'use strict'
+
 let typo: string = "kuty";
 
-function appendA(typo: string): string {
-    return (typo);
+function appendA(typo: string) {
+    return typo + "a";
 }
 
-console.log(appendA(typo) + "a");
+console.log(appendA(typo));

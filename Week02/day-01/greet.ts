@@ -3,7 +3,8 @@
 let Name: string = "Greenfox";
 
 function greet(Name?: string) {
-    console.log("Greetings, dear " + Name);
+    return "Greetings, dear " + Name;
 }
 
-greet(Name);
+console.log(greet(Name));
+
