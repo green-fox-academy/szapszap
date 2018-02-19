@@ -2,8 +2,8 @@
 
 let Name: string = "Greenfox";
 
-function greet(Name?: string): string {
-    return(Name);
+function greet(Name?: string) {
+    console.log("Greetings, dear " + Name);
 }
 
-console.log('Greetings, dear ' + greet(Name));
+greet(Name);
