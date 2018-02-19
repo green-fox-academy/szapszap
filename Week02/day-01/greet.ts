@@ -7,5 +7,3 @@ function greet(Name?: string) {
 }
 
 console.log(greet(Name));
-
-
