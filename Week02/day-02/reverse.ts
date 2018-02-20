@@ -4,9 +4,11 @@
 let reverse: string = '.eslaf eb t\'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI';
 
 function reverseString(str) {
-    if (str === "")
-      return "";
-    else
-      return reverseString(str.substr(1)) + str.charAt(0);
-  }
+    let newString = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+    
+} 
 console.log(reverseString(reverse));
