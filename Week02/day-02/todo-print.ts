@@ -8,6 +8,7 @@
 //  - Buy milk
 //  - Download games
 //      - Diablo
+
 let todoText: string = ' - Buy milk\n';
 let beginning: string = 'My todo:\n';
 let downl: string = ' - Download games\n      - Diablo\n';
