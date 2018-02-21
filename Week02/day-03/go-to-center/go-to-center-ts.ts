@@ -20,11 +20,13 @@ function lineDraw(x: number, y: number) {
     let a: number = 100;
     let b: number = 50;
 
-    for (let i = 1; i < 4; i++) {
-        a += 5;
-        b += 25;
+    for (let i = 1; i < 14; i++) {
+        a += 5 ** 2;
+        b += 30;
         lineDraw(a, b);
     }
 
+    // sorry guys, I wanted to play with it and draw more than 3 lines
+    // look, I created a star destroyer
 
 
