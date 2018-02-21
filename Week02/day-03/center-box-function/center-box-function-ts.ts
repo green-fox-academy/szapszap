@@ -18,7 +18,7 @@ function square(x) {
 let a: number = 180;
 
 for (let i = 0; i < 3; i++) {
-    square(a);
     a -= 50;
+    square(a);
 };
 
