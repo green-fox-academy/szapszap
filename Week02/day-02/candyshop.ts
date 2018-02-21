@@ -10,5 +10,5 @@ let shopItems: any[] = ['Cupcake', 2, 'Brownie', false];
 
 function sweets(item: any[]) {
     let cookies: string[];
-    
+    // item.map(element)
 }

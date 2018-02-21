@@ -5,6 +5,8 @@
 // -  Log the third element to the console
 
 let numList = [1, 2, 3, 4, 5];
+numList[2] += 1;
+console.log(numList[2]);
 
 
 // ez más
@@ -12,4 +14,5 @@ let numList = [1, 2, 3, 4, 5];
 var myString = 'Almafa';
 var myNewString = myString.replace(/a/gi, 'x');
 console.log(myNewString);
+
 
