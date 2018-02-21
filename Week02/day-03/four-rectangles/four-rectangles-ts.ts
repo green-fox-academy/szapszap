@@ -23,7 +23,5 @@ for (let i = 0; i < 4; i++) {
     c += 15;
     d -= 10;
     fourRect(a, b, c, d);
-
-
 };
 
