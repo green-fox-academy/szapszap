@@ -10,14 +10,13 @@ const ctx = canvas.getContext('2d');
 // Create a loop that fills the canvas with rainbow colored squares.
 // let a: number = 20;
 
-
-let x: 250;
+let x: number = 200;
 let color: string;
 
 function drawSquares(x: number, color: string) {
     ctx.fillStyle = color;
     ctx.fillRect(canvas.width / 2 - x / 2, canvas.height / 2 - x / 2, x, x);  
-}
+} 
 
 let rainbow = {
     1: '#FF0000',

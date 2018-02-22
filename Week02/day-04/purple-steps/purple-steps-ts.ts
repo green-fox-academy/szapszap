@@ -14,13 +14,12 @@ function steps(x: number, y: number) {
     ctx.fillStyle = '#202060';
 };
 
-let a: number = 20;
-let b: number = 20;
+let a: number = 0;
+let b: number = 0;
 
-for (let i = 0; i < 19; i++) {
-    a += 20;
-    b += 20;
+for (let i = 2; i < 19; i++) {
+    a += 22;
+    b += 22;
     steps(a, b);
 };
 
-// not done with it yet
