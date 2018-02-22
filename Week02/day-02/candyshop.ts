@@ -8,7 +8,10 @@
 
 let shopItems: any[] = ['Cupcake', 2, 'Brownie', false];
 
-function sweets(item: any[]) {
-    let cookies: string[];
-    // item.map(element)
-}
+function sweets(item: any) {
+    item[1] = 'Croissant';
+    item[3] = 'Ice cream';
+    return item;
+};
+
+console.log(sweets(shopItems));
