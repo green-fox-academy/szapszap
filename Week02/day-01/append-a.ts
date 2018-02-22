@@ -3,3 +3,7 @@
 // -  Add all elements an `"a"` at the end
 
 let nimals: string[] = ["kuty", "macsk", "cic"];
+nimals = nimals.map(function(item) {
+    return item + 'a';
+});
+console.log(nimals);
