@@ -17,9 +17,9 @@ let b: number = 0;
 let c: number = canvas.width;
 let d: number = 0;
 
-for (let i = 1; i < 25; i++) {
-    a += 25;
-    d += 17;
+for (let i = 1; i < canvas.width/24; i++) {
+    a += canvas.width/24;
+    d += canvas.width/35;
     linePlay1(a, b, c, d);
 };
 
@@ -36,8 +36,8 @@ let f: number = 0;
 let g: number = 0;
 let h: number = canvas.height;
 
-for (let i = 1; i < 25; i++) {
-    f += 17;
-    g += 25;
+for (let i = 1; i < canvas.width/24; i++) {
+    f += canvas.width/35;
+    g += canvas.width/24;
     linePlay2(e, f, g, h);
 };
