@@ -13,19 +13,17 @@ class PostIt {
     backgroundColor:string;
     text: string;
     textColor: string;
+    constructor(backgroundColor, text, textColor) {
+        this.backgroundColor = backgroundColor;
+        this.text = text;
+        this.textColor = textColor;
+    }
 }
 
-let first = new PostIt();
-first.backgroundColor = "orange";
-first.text = "Idea 1";
-first.textColor = "blue";
+let first = new PostIt('orange', 'Idea 1', 'blue');
+let second = new PostIt('pink', 'Awesome', 'black');
+let third = new PostIt('yellow', 'Superb!', 'green');
 
-let second = new PostIt();
-second.backgroundColor = "pink";
-second.text = "Awesome";
-second.textColor = "black";
-
-let third = new PostIt();
-third.backgroundColor = "yellow";
-third.text = "Superb!";
-third.textColor = "green";
+console.log(first);
+console.log(second);
+console.log(third);
