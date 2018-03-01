@@ -23,5 +23,4 @@ function bunnies(num: number) {
         return ears;
     }
 }
-
 console.log(bunnies(3));
