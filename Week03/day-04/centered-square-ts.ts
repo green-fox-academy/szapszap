@@ -13,7 +13,7 @@ let p: number = 0;
 let red: number = 40; 
 let green: number = 20;
 
-function circles(x, y, radius, p) {
+function circles(x: number, y: number, radius: number, p: number) {
     if (radius > 10) {
         ctx.beginPath();
         ctx.strokeStyle = 'rgba(' + red + ',' + green + ', 125)';
