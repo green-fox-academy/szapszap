@@ -20,10 +20,7 @@ class Person {
     }
 }
 
-class Student {
-    name: string;
-    age: number;
-    gender: string;
+class Student extends Person {
     previousOrganization: string;
     skippedDays: number;
 
@@ -40,18 +37,13 @@ class Student {
     }
 
     constructor(name, age, gender, previousOrganization) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+        super(name, age, gender);
         this.previousOrganization = previousOrganization;
         this.skippedDays = 0;
     }
 }
 
-class Mentor {
-    name: string;
-    age: number;
-    gender: string;
+class Mentor extends Person {
     level: string;
 
     getGoal() {
@@ -63,17 +55,12 @@ class Mentor {
     }
 
     constructor(name, age, gender, level) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+        super(name, age, gender);
         this.level = level;
     }
 }
 
-class Sponsor {
-    name: string;
-    age: number;
-    gender: string;
+class Sponsor extends Person {
     company: string;
     hiredStudents: number;
 
@@ -90,9 +77,7 @@ class Sponsor {
     }
 
     constructor(name, age, gender, company) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+        super(name, age, gender);
         this.company = company;
         this.hiredStudents = 0;
     }
