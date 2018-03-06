@@ -1,3 +1,5 @@
+'use strict'
+
 class Person {
     name: string;
     age: number;
@@ -98,24 +100,22 @@ class Sponsor {
 
 class Cohort {
     name: string;
-    students: string[];
-    mentors: string[];
+    students: Student[] = [];
+    mentors: Mentor[] = [];
 
     addStudent(Student) {
-        this.students.push(Student);
+        this.students.push(student);
     }
 
     addMentor(Mentor) {
-        this.mentors.push(Mentor);
+        this.mentors.push(mentor);
     }
 
     info() {
-        console.log(`The` + `${this.name}` + ` cohort has` + `${this.students.length}` + ` students and` + `${this.mentors.length}` + `mentors`);
+        console.log(`The ` + `${this.name}` + ` cohort has ` + `${this.students.length}` + ` students and` + ` ${this.mentors.length} ` + `mentors`);
     }
 
-    constructor(name: string, students: string[], mentors: string[]) {
-        this.students = students;
-        this.mentors = mentors;
+    constructor(name: string) {
         this.name = name;
     }
 }
