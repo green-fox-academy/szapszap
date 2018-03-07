@@ -25,7 +25,9 @@ class Reservations {
 } 
   let reservations = new Reservations;
 
-  console.log("Booking# " + reservations.getCodeBooking() + " for " + reservations.getDowBooking());
-  console.log("Booking# " + reservations.getCodeBooking() + " for " + reservations.getDowBooking());
-  console.log("Booking# " + reservations.getCodeBooking() + " for " + reservations.getDowBooking());
-  console.log("Booking# " + reservations.getCodeBooking() + " for " + reservations.getDowBooking());
+  function logIt() {
+    for (let i = 0; i < 8; i++) {
+        console.log("Booking# " + reservations.getCodeBooking() + " for " + reservations.getDowBooking());
+    }
+}
+logIt();
