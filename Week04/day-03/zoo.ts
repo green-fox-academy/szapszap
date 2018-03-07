@@ -39,6 +39,8 @@ class Bird extends Animal {
     }
 }
 
+export {Animal};
+
 let reptile = new Reptile("Crocodile");
 let mammal = new Mammal("Koala");
 let bird = new Bird("Parrot");
