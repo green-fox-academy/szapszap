@@ -1,71 +1,104 @@
 'use strict'
 
-class Garden {
-    plants: Plant[] = [];
-
-    box(Plant) {
-        plants.push(yellow);
-        plants.push(blue);
-        plants.push(purple);
-        plants.push(orange);
-    }
-    
-}
-
 class Plant {
-    color: string;
-    amountofWater: number = 0;
-    needsWater: boolean;
+    private color: string;
+    waterLevel: number;
     type: string;
 
-   
-
-    constructor(color) {
+    constructor(color: string) {
         this.color = color;
+        this.waterLevel = 0;
+    }
+
+    get plantColor(): string {
+        return this.color;
+    }
+
+    get plantType(): string {
+        return this.type;
+    }
+
+    waterIt(amount: number) {
+        this.waterLevel += amount;
+    }
+
+    needsWater(): boolean {
+       /* if (this.waterLevel < 5) {
+            return true;
+        } else {
+            return false;
+        } */
+        return this.waterLevel < 5;
     }
 }
 
 class Flower extends Plant {
-    constructor(color) {
+    constructor(color: string) {
         super(color);
-        this.type = "Flower";
+        this.type = 'flower';
     }
 
-    watering() {
-        if (this.amountofWater < 5) {
-            return this.needsWater = true;
-        } else {
-            return this.needsWater = false;
-        }
+    waterIt(amount: number) {
+        this.waterLevel += amount * 0.75;
     }
 }
 
 class Tree extends Plant {
-    constructor(color) {
+    constructor(color: string) {
         super(color);
-        this.type = "Tree";
+        this.type = 'tree';
     }
 
-    watering() {
-        if (this.amountofWater < 10) {
-            return this.needsWater = true;
-        } else {
-            return this.needsWater = false;
+    needsWater(): boolean {
+        return this.waterLevel < 10;
+    }
+
+    waterIt(amount: number) {
+        this.waterLevel += amount * 0,4;
+    }
+}
+
+class Garden {
+    plants: Plant[];
+
+    constructor() {
+        this.plants = [];
+    }
+
+    addPlant(p: Plant) {
+        this.plants.push(p);
+    }
+
+    listPlants() {
+        for(let i = 0; i < this.plants.length; i++) {
+            console.log(this.plants[i].plantColor);
+        }
+    }
+
+    waterPlants(amount: number) {
+        let thirstyPlant = 0;
+        for(let i = 0; i < this.plants.length; i++) {
+            if(this.plants[i].needsWater()) {
+                thirstyPlant += 1;
+            }
+        }
+        if(thirstyPlant !==0) {
+        const dose = amount / thirstyPlant;
+        for(let i = 0; i < this.plants.length; i++) {
+            if(this.plants[i].needsWater()) {
+                this.plants[i].waterIt(dose);
+                }
+            }
         }
     }
 }
 
-let plants = [];
-let yellow = new Flower('Yellow');
-plants.push(yellow);
-let blue = new Flower('Blue');
-plants.push(blue);
-let purple = new Tree('Purple');
-plants.push(purple);
-let orange = new Tree('Orange');
-plants.push(orange);
 
-let myGarden = new Garden;
-
-//unfinished
-
+let garden = new Garden();
+garden.addPlant(new Flower('blue'));
+garden.addPlant(new Flower('yellow'));
+garden.addPlant(new Tree('purple'));
+garden.addPlant(new Tree('orange'));
+garden.waterPlants(40);
+garden.listPlants();
+console.log(garden);
