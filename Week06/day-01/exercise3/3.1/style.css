@@ -1,0 +1,16 @@
+.flex-container{
+  display: flex;
+  background-color: rgb(238, 208, 39);
+  width: 800px;
+  height: 300px;
+  align-items: center;
+}
+
+.item{
+  background: rgb(174, 36, 187);
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
