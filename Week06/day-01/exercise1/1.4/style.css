@@ -1,0 +1,29 @@
+.flex-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.item{
+  float: left;
+  width: 100%;
+}
+
+
+.green{
+  background: rgb(28, 202, 22);
+  height: 200px;
+}
+
+.yellow{
+  background: rgb(241, 210, 34);
+  height: 400px;
+}
+
+.purple{
+  background: rgb(174, 36, 187);
+  height: 200px;
+}
+
+.green{order: 1;}
+.yellow{order: 3;}
+.purple{order: 2;}
