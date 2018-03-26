@@ -1,0 +1,26 @@
+.flex-container{
+  display: flex;
+  
+}
+
+.item{
+  float: left;
+  height: 300px;
+  flex-direction: row;
+}
+
+
+.green{
+  background: rgb(28, 202, 22);
+  width: 25%;
+}
+
+.yellow{
+  background: rgb(241, 210, 34);
+  width: 50%;
+}
+
+.purple{
+  background: rgb(174, 36, 187);
+  width: 25%;
+}

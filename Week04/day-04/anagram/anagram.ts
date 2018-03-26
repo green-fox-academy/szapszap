@@ -9,4 +9,5 @@ export let anagram = (s1: string, s2: string) => {
   }
   
 
-  // console.log(anagram('bela', 'flab'));  | It works
+  // console.log(anagram('bela', 'flab'));  >> False
+  // console.log(anagram('bela', 'elab'));  >> True

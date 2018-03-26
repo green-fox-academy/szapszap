@@ -1,5 +1,7 @@
 'use strict';
 
+//unfinished!
+
 let countIt = (s: string) => {
   let letters: number = 0;
   let stringItself: string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
