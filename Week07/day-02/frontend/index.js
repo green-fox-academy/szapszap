@@ -45,3 +45,16 @@ app.get('/greeter', (req, res) => {
   }
 });
 
+app.get('/appenda/:appendable', (req, res) => {
+  //console.log(req.query);
+  const appendable = req.params.appendable;
+
+  if (appendable === undefined) {
+    res.status(404);
+  } else {
+    res.json({
+      appended: appendable + "a",
+    });
+  }
+});
+
