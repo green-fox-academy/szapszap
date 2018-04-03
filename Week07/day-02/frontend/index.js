@@ -18,7 +18,6 @@ app.get('/doubling', (req, res) => {
   console.log(doubling);
 
   if (doubling === undefined) {
-    res.status(404);
     res.json({
       error: "Please provide an input!",
     });
@@ -29,3 +28,20 @@ app.get('/doubling', (req, res) => {
     });
   }
 });
+
+app.get('/greeter', (req, res) => {
+  console.log(req.query);
+  const name = req.query.name;
+  const title = req.query.title;
+
+  if (name === undefined || title === undefined) {
+    res.json({
+      error: "Please provide a name/title!"
+    });
+  } else {
+    res.json({
+      welcome_message: `Oh, hi there ${name}, my dear ${title}!`
+    });
+  }
+});
+
