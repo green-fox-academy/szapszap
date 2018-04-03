@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const PORT = 8080;
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './index.html'));
@@ -36,7 +39,7 @@ app.get('/greeter', (req, res) => {
 
   if (name === undefined || title === undefined) {
     res.json({
-      error: "Please provide a name/title!"
+      error: "Please provide a name/title!",
     });
   } else {
     res.json({
@@ -46,7 +49,6 @@ app.get('/greeter', (req, res) => {
 });
 
 app.get('/appenda/:appendable', (req, res) => {
-  //console.log(req.query);
   const appendable = req.params.appendable;
 
   if (appendable === undefined) {
@@ -58,3 +60,28 @@ app.get('/appenda/:appendable', (req, res) => {
   }
 });
 
+app.post('/dountil/:what', (req, res) => {
+  console.log(req.body);
+  const num = req.body.until;
+  const what = req.params.what;
+
+  if (num === undefined) {
+    res.json({
+      error: "Please provide a number!",
+    });
+  } else if (what === 'sum') {
+    res.json({
+      result: num * (num + 1) / 2,
+    });
+  } else if (what === 'factor') {
+    function factorial (num){
+      if (num==0 || num==1){
+        return 1;
+      }
+      return factorial(num-1)*num;
+    } 
+    res.json({
+      result: factorial(num),
+    });
+  }
+});
