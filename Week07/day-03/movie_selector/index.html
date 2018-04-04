@@ -9,7 +9,6 @@
        let s2 = document.getElementById(slct2);
        s2.innerHTML = "";
        let optionArray = [];
-       console.log(s1.value == 'Drama');
        if (s1.value == "Sci-fi") {
          optionArray = ["|","moon|Moon","2001|2001 Space odessy","contact|Contact"];
        } else if (s1.value == "Drama") {
@@ -22,8 +21,9 @@
          let newOption = document.createElement("option");
          newOption.value = pair[0];
          newOption.innerHTML = pair[1];
-         console.log(newOption);
          s2.options.add(newOption);
+         var text = `The selected movie is: ${newOption}`;
+         //eventlistener needed!!!!!!!!!!
        }
      }
       </script>
@@ -38,5 +38,11 @@
         <option value="Comedy">Comedy</option>
       </select>
       <select id="slct2" name="slct2"></select>
+      <!-- <script>
+        var e = document.getElementById("slct1");
+        var value = e.options[e.selectedIndex].value;
+        var text = e.options[e.selectedIndex].text;
+        alert(`The selected movie is ${slct1}`);
+      </script> -->
    </body>
  </html>
