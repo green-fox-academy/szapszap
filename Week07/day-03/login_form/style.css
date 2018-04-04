@@ -1,0 +1,24 @@
+.article {
+  margin: auto;
+  width: 25%;
+  height: 550px;
+  padding: 0 80px;
+  border: 1px solid #dadada;
+  background-color: white;
+  font-family: 'Inconsolata', monospace;
+  text-transform: uppercase;
+}
+
+body {
+  background-color: #dadada;
+}
+
+h1 {
+  font-size: 32px;
+  color: #5F6D7B;
+  font-weight: 200;
+}
+
+p {
+  color: #5F6D7B;
+}
