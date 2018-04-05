@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
       e.contains.indexOf(alcohol) !== -1
     ));
 
-    res.render('cocktails', {
+    res.render('home', {
       cocktails: juice,
       alcoholList
     });
