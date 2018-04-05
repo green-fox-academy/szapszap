@@ -1,0 +1,30 @@
+#price {
+  width: 150px;
+}
+
+.headers {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: black;
+  text-align: center;
+  height: 40px;
+}
+
+#acprice {
+  text-align: center;
+}
+
+#acname {
+  font-weight: bold;
+}
+
+#acname, #accont {
+  margin-left: 15px;
+  padding: 3px;
+}
+
+tbody tr:nth-child(odd) {
+  background: #eee;
+}

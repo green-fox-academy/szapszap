@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <title>Cocktails</title>
+  </head>
+  <body>
+    <h1>Cocktails</h1>
+    <h2><% alcoholList.forEach(function(e) { %>
+      <a href="/?alcohol=<%= e %>" style="text-decoration:none"><%= e %></a>
+      <% }) %></h2>
+      <table>
+          <thead>
+            <tr class="headers">
+              <td id="name">Name</td>
+              <td id="price"=>Price</td>
+            </tr>
+          </thead>
+          <tbody> 
+            <% for (i = 0; i < cocktails.length; i++) {%>
+              <tr>
+                <td>
+                  <div id="acname"><%= cocktails[i].name %></div>
+                  <div id="accont"><%= cocktails[i].contains.join(', ') %></div>
+                </td>
+                <td id="acprice"><%= cocktails[i].price %> Ft</td>
+              </tr>
+              <% } %>
+          </tbody>
+  </body>
+</html>
