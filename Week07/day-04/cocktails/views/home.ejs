@@ -7,9 +7,11 @@
   </head>
   <body>
     <h1>Cocktails</h1>
-    <h2><% alcoholList.forEach(function(e) { %>
+    <h2><a href="/" style="text-decoration:none">all</a>
+      <% alcoholList.forEach(function(e) { %>
       <a href="/?alcohol=<%= e %>" style="text-decoration:none"><%= e %></a>
-      <% }) %></h2>
+      <% }) %>
+    </h2>
       <table>
           <thead>
             <tr class="headers">
@@ -21,7 +23,13 @@
             <% for (i = 0; i < cocktails.length; i++) {%>
               <tr>
                 <td>
-                  <div id="acname"><%= cocktails[i].name %></div>
+                  <% let virgin = '';
+                  if (cocktails[i].isAlcoholic === false) {
+                    virgin = '(non-alcoholic)'
+                  }; %>
+                  <div id="acname"><%= cocktails[i].name %>
+                    <%= virgin%>
+                  </div>
                   <div id="accont"><%= cocktails[i].contains.join(', ') %></div>
                 </td>
                 <td id="acprice"><%= cocktails[i].price %> Ft</td>
