@@ -1,0 +1,8 @@
+ul {
+  list-style-image: url('tick.png');
+}
+
+ul li:nth-child(odd) {
+  background: rgb(203, 154, 212);
+  width: 900px;
+}

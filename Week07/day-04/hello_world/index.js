@@ -10,6 +10,7 @@ app.get('/', (req, res) => {
   // render `home.ejs`
   res.render('home', {
     title: 'Hello World',
+    img: 'http://delzalapress.hu/wp-content/uploads/2015/09/pedomaci.jpg',
   });
 });
 

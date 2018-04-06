@@ -75,13 +75,27 @@ app.post('/dountil/:what', (req, res) => {
     });
   } else if (what === 'factor') {
     function factorial (num){
-      if (num==0 || num==1){
+      if (num === 0 || num === 1){
         return 1;
       }
-      return factorial(num-1)*num;
+      return factorial(num - 1) * num;
     } 
     res.json({
       result: factorial(num),
     });
   }
 });
+
+app.post('/sith', (req, res) => {
+  console.log(req.body);
+  const text = req.body.sith;
+
+  let yoda = () => {
+    text = text.split(".");
+    return text;
+  }
+
+  res.json({
+    sith_text: yoda,
+  });
+})
