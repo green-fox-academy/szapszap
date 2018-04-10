@@ -33,10 +33,10 @@ const Shuffler = {
   }
 };
 
-Shuffler.pick(); // prints Panama got 1000
-Shuffler.pick(); // prints Cyprus got 1000
-Shuffler.pick(); // prints Panama got 1000
-Shuffler.pick(); // prints Cyprus got 1000
+Shuffler.pick(); 
+Shuffler.pick(); 
+Shuffler.pick(); 
+Shuffler.pick(); 
 Cyprus.deposit();
 Panama.deposit();
 

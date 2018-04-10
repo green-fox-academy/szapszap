@@ -44,7 +44,7 @@ refuelFerr(52);
 //  - battery: number
 //  - kms: number
 //  - consunption: number
-// And a method called ride, that takes a parameter celled km,
+// And a method called ride, that takes a parameter called km,
 // and increments kms with it, then drains the battery based on the consumpltion 
 
 let tesla = {
