@@ -51,7 +51,7 @@ let tesla = {
   type: "Tesla",
   battery: 0,
   kms: 2300,
-  consumption: 0.12,
+  consumption: 0.23,
   ride: function (km) {
     this.kms += km;
     this.fuel -= km * this.consumption; 
