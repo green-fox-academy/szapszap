@@ -6,14 +6,22 @@
     <title>MySQL posts</title>
   </head>
   <body>
+    <div class="head">
+      <p>SPACE</p>
+    </div>
    <h2>
       <article class="article">
      <ul>
        <% rows.forEach( (row) => { %>
-        <li><%= (`${row.id}: '${row.content}' posted by 
-          ${row.user} at ${row.date_posted.toString().slice(0, 15)}`); %>
+        <li><%= (`${row.title}: ${row.content}' posted by 
+          ${row.user} at ${row.date_posted.toString().substring(0, 15)}`); %>
     <% }); %></li>
     </ul>
+    <table>
+      <form>
+      </form>
+    </table>
+    
   </h2>
   </article>
   </body>
