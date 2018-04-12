@@ -23,21 +23,15 @@ body {
   background-color: black;
 }
 
-#title {
+.title {
   font-weight: bold;
 }
 
-ul li {
-  border-bottom: solid 1px black;
-  list-style-type: none;
-  display: inline-block;
-  width: 100%;
-  background-color: white;
-}
-
 .article {
-  width: 50%;
-  float: left;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: black;
 }
 
 

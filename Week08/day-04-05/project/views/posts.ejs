@@ -11,16 +11,15 @@
     </div>
    <h2>
       <article class="article">
-     <ul>
-       <% rows.forEach( (row) => { %>
-        <li><%= (`${row.title}: ${row.content}' posted by 
-          ${row.user} at ${row.date_posted.toString().substring(0, 15)}`); %>
-    <% }); %></li>
-    </ul>
-    <table>
-      <form>
-      </form>
-    </table>
+       <% rows.forEach((row, i) => {  %>
+      <div class="title"><a href="<%=row.title %>"><%=row.title %></a></div>
+      <% let date = row.date_posted.toString().substring(0, 15); %>  
+      <div class="score">Date of posting: <%=date %></div>
+      <div class="score">Number of likes: <%=row.score %></div>
+      <% let id = i+1 ;%>
+      <div class="upvote-post"><button class="likebutton" data-id="<%=row.id%>" data-action="upvote">Upvote</button></div>
+      <div class="downvote-post"><button class="kislikebutton" data-id="<%=row.id%>" data-action="downvote">Downvote</button></div>
+      <% }); %>
     
   </h2>
   </article>
