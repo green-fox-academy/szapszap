@@ -1,0 +1,21 @@
+ul {
+  list-style-image: url('tick.png');
+}
+
+ul li:nth-child(odd) {
+  background: rgba(135, 210, 253, 0.664);
+  color: black;
+  width: 900px;
+}
+
+ul li:nth-child(even) {
+  background: black;
+  color: rgba(135, 210, 253, 0.664);
+  width: 900px;
+}
+
+.article {
+    margin: auto;
+    width: 50%;
+    padding: 0 80px;
+}

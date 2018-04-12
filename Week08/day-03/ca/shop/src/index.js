@@ -45,6 +45,51 @@ app.get('/', (req, res) => {
   })
 });
 
+app.get('/api/history', (req, res) => {
+  let sql = 'SELECT * FROM history ORDER BY date DESC LIMIT 15;';
+  let queryInputs = [];
+
+  if (req.query.type !== undefined) {
+    sql = 'SELECT * FROM history WHERE type = ? LIMIT 25;';
+    queryInputs = [types[req.query.type]];
+  }
+  conn.query(sql, queryInputs, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+    res.json(result);
+  });
+});
+
+app.get('/api/types', (req, res) => {
+  let sql = 'SELECT * FROM types;';
+
+  conn.query(sql, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+    res.json(result);
+  });
+});
+
+app.post('/api/history', (req, res) => {
+  sql = 'INSTERT INTO history (title, price, type, date) VALUES (?, ?, ?, ?);';
+  queryInputs = [req.body.title, req.body.price, req.body.type, req.body.date];
+
+  conn.query(sql, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+    res.json({
+      message: 'item has been created',
+      id: result.insertId,
+    });
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`App is running on port ${PORT}`);
 });
