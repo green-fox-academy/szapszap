@@ -7,21 +7,38 @@
   </head>
   <body>
     <div class="head">
+      <img src="../static/nyan.png" id="nyan">
       <p>SPACE</p>
     </div>
-   <h2>
+    <div class="columns">
       <article class="article">
        <% rows.forEach((row, i) => {  %>
       <div class="title"><a href="<%=row.title %>"><%=row.title %></a></div>
+      <div class="content"><%=row.content %></div>
       <% let date = row.date_posted.toString().substring(0, 15); %>  
       <div class="score">Date of posting: <%=date %></div>
       <div class="score">Number of likes: <%=row.score %></div>
       <% let id = i+1 ;%>
-      <div class="upvote-post"><button class="likebutton" data-id="<%=row.id%>" data-action="upvote">Upvote</button></div>
-      <div class="downvote-post"><button class="kislikebutton" data-id="<%=row.id%>" data-action="downvote">Downvote</button></div>
+      <div class="buttons">
+      <div class="upvote-post"><button class="likebutton" data-id="<%=row.id%>" data-action="upvote">Like</button></div>
+      <div class="downvote-post"><button class="kislikebutton" data-id="<%=row.id%>" data-action="downvote">Dislike</button></div></div>
       <% }); %>
-    
-  </h2>
-  </article>
+    </article>
+    <article class="article2">
+    <h1>Account login</h1>
+        <form>
+            <p>Username</p>
+            <input type="email" name="name" required>
+            <p>Password</p>
+            <input type="password" name="pw" required>
+            <br>
+            <a href="#">Forgot Password?</a>
+            <br>
+            <br>
+            <br>
+            <button id="Login">Login</button>
+        </form>
+      </article>
+  </div>
   </body>
 </html>
