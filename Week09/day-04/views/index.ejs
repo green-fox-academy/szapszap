@@ -6,6 +6,12 @@
     <link rel="stylesheet" type="text/css" href="../static/style.css">
   </head>
   <body>
+    <div id="quiz">
+        <p id="question"><%= question %></p>
+        <% answers.forEach(e => { %>
+          <button id="answers"><%= e.answer %></button>
+        <% }); %>
+  </div>
     <script src="static/front.js"></script>
   </body>
 </html>

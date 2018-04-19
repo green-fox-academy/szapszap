@@ -18,35 +18,34 @@ const conn = mysql.createConnection({
 });
 
 app.get('/game', (req, res) => {
-  conn.query('SELECT * FROM questions;', (err, response) => {
+  conn.query('SELECT * FROM questions;', (err, questions) => {
     if (err) {
-      res.status(400).json({
+      res.status(500).json({
         error: 'Wrong request',
       });
     } else {
-      res.json(response); 
-    }
-    const question = response[Math.floor(Math.random() * (response.length - 1)) + 1];
-    conn.query(`SELECT * FROM answers WHERE answers.question_id = ${question.id};`, (err, answers) => {
-      if (err) {
-        res.status(400).json({
-          error: 'Wrong request',
-        });
-      } else {
-        res.json({
-          id: question.id,
-          question: question.question,
-          answers,
-        }); 
-      }
-    })
+      const question = questions[Math.floor(Math.random() * (questions.length - 1)) + 1];
+      conn.query(`SELECT * FROM answers WHERE answers.question_id = ${question.id};`, (err, answers) => {
+        if (err) {
+          res.status(500).json({
+            error: 'Wrong request',
+          });
+        } else {
+          res.render('index', {
+            id: question.id,
+            question: question.question,
+            answers,
+          }); 
+        }
+      })
+    } 
   })
 });
 
 app.get('/questions', (req, res) => {
   conn.query('SELECT * FROM questions;', (err, response) => {
     if (err) {
-      res.status(400).json({
+      res.status(500).json({
         error: 'Wrong request',
       });
     } else {
@@ -69,7 +68,7 @@ app.post('/questions', (req, res) => {
   conn.query(`INSERT INTO questions (question) VALUES ("${question}");`, (err, response) => {
     if (err) {
       console.log(err);
-      res.status(400).json({
+      res.status(500).json({
         error: 'Wrong request',
       });
     } else {
@@ -79,7 +78,7 @@ app.post('/questions', (req, res) => {
       (${questionID}, "${answer_3}", ${is_correct3}),
       (${questionID}, "${answer_4}", ${is_correct4});`, question, (err, response) => {
         if (err) {
-          res.status(400).json({
+          res.status(500).json({
             error: 'Wrong request',
           });
         } else {
@@ -95,13 +94,13 @@ app.delete('/questions/:id', (req, res) => {
   let deleteFromQuestions = `DELETE FROM questions WHERE id = ${req.params.id};`;
   conn.query(deleteFromQuestions, (err, result) => {
     if (err) {
-      res.status(400).json({
+      res.status(500).json({
         error: 'Wrong request',
       });
     } else {
       conn.query(deleteFromAnswers, (err, result) => {
         if (err) {
-          res.status(400).json({
+          res.status(500).json({
             error: 'Wrong request',
           });
         } else {
